@@ -1,0 +1,52 @@
+{
+  "name": "land-sale",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean": "hardhat clean",
+    "commit": "git-cz",
+    "compile": "hardhat compile",
+    "coverage": "hardhat coverage --solcoverjs ./.solcover.js --temp artifacts --testfiles \"./test/**/*.ts\"",
+    "deploy": "hardhat run scripts/deploy.ts",
+    "deploy:network": "hardhat run scripts/deploy.ts --network",
+    "lint": "yarn run lint:sol && yarn run lint:ts && yarn run prettier:list-different",
+    "lint:sol": "solhint --config ./.solhint.json --max-warnings 0 \"contracts/**/*.sol\"",
+    "lint:ts": "eslint --config ./.eslintrc.yaml --ignore-path ./.eslintignore --ext .js,.ts .",
+    "prettier": "prettier --config .prettierrc --write \"**/*.{js,json,md,sol,ts}\"",
+    "prettier:list-different": "prettier --config .prettierrc --list-different \"**/*.{js,json,md,sol,ts}\"",
+    "test": "hardhat test",
+    "typechain": "hardhat typechain"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-chai-matchers": "^1.0.3",
+    "@nomicfoundation/hardhat-toolbox": "^1.0.2",
+    "@nomiclabs/hardhat-etherscan": "^3.1.0",
+    "@nomiclabs/hardhat-solhint": "^2.0.1",
+    "@openzeppelin/contracts": "^4.7.3",
+    "@openzeppelin/hardhat-upgrades": "^1.20.0",
+    "@typechain/hardhat": "^6.1.2",
+    "@types/mocha": "^10.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.35.1",
+    "@typescript-eslint/parser": "^5.35.1",
+    "dotenv": "^16.0.3",
+    "eslint": "^8.22.0",
+    "hardhat": "^2.10.2",
+    "hardhat-contract-sizer": "^2.6.1",
+    "hardhat-gas-reporter": "^1.0.8",
+    "mocha": "^10.0.0",
+    "path": "^0.12.7",
+    "prettier": "2.7.1",
+    "prettier-plugin-solidity": "^1.0.0-beta.24",
+    "solhint": "^3.3.7",
+    "solhint-plugin-prettier": "^0.0.5",
+    "solidity-coverage": "^0.7.21",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "moment": "^2.29.4"
+  }
+}
